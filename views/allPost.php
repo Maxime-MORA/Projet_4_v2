@@ -52,19 +52,25 @@ require_once('./models/troncatureTexte.php');
     if ($nb==0){
         echo ('<a class="btn btn-dark btn-block" style="margin:2.5px;" href="'.$_SESSION["link"].'article-'.$data['id'].'#comments">Publier le premier commentaire</a>');
     }
-        elseif($nb>=1){
-        echo ('<a class="btn btn-dark btn-block" style="margin:2.5px;" href="'.$_SESSION["link"].'article-'.$data['id'].'#comments">Voir les commentaires ( '.$nb.' ) ');
-        if ($signalsnb==0)
-        {
-            echo ('</a>');
+     elseif($nb>=1){
+         echo ('<a class="btn btn-dark btn-block" style="margin:2.5px;" href="'.$_SESSION["link"].'article-'.$data['id'].'#comments">Voir les commenta ( '.$nb.' ) ');
+         if ($signalsnb==0)
+         {
+             echo ('</a>');
+         }
+         elseif ($signalsnb==1)
+         {
+             echo ('dont ( '.$signalsnb.' ) signalé</a>');
+         }
+         elseif ($signalsnb>=2)
+         {
+             echo ('dont ( '.$signalsnb.' ) signalés</a>');
+         }
+         else
+         {
+             echo ('</a>');
         }
-             elseif ($signalsnb==1){
-                 echo ('dont ( '.$signalsnb.' ) signalé</a>');
-             }
-             elseif ($signalsnb<=2){
-                 echo ('dont ( '.$signalsnb.' ) signalés</a>');
-             }
-    }
+     }
     ?>
 
 </div>
