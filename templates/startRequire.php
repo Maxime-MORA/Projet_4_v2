@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$_SESSION["link"] = 'http://localhost/Projet-4-2019/';
+$_SESSION["link"] = 'http://localhost/Projet_4_v2/';
 if (!isset($_SESSION["admin"])) $_SESSION["admin"] = 0;
 ?>
 <!DOCTYPE html>
