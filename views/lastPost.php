@@ -13,11 +13,12 @@ require_once('./models/troncatureTexte.php');
              $resu = $res->fetch();
              //Nombre de commentaires
              $nb = $resu['nb'];
-             //Compter les commentaires signalés
-            $sql = $db->query("SELECT COUNT(*) as signals FROM comments WHERE signals = 1 AND id_article=".$data['id']);
-            $sig = $sql->fetch();
-             //Nombre de commentaires signalés
-            $signalsnb = $sig['signals'];
+             $sql = $db->query("SELECT * FROM comments WHERE signals='1' AND id_article=".$data['id']);
+             $signalsnb = 0;
+             while ($comments = $sql->fetch())
+             {
+                 ++$signalsnb;
+             }
 ?>
 <div class="container" style="background-color:#e8e8e8; padding:20px;">
     <h1>
@@ -54,8 +55,18 @@ require_once('./models/troncatureTexte.php');
     if ($nb==0){
         echo ('<a class="btn btn-dark btn-block" style="margin:2.5px;" href="'.$_SESSION["link"].'article-'.$data['id'].'#comments">Publier le premier commentaire</a>');
     }
-         elseif($nb>=1){
-        echo ('<a class="btn btn-dark btn-block" style="margin:2.5px;" href="'.$_SESSION["link"].'article-'.$data['id'].'#comments">Voir les commentaires ( '.$nb.' ) dont ( '.$signalsnb.' ) signalé(s)</a>');
+        elseif($nb>=1){
+        echo ('<a class="btn btn-dark btn-block" style="margin:2.5px;" href="'.$_SESSION["link"].'article-'.$data['id'].'#comments">Voir les commentaires ( '.$nb.' ) ');
+        if ($signalsnb==0)
+        {
+            echo ('</a>');
+        }
+             elseif ($signalsnb==1){
+                 echo ('dont ( '.$signalsnb.' ) signalé</a>');
+             }
+             elseif ($signalsnb<=2){
+                 echo ('dont ( '.$signalsnb.' ) signalés</a>');
+             }
     }
     ?>
 
