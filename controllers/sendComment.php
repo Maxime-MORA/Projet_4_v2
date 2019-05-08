@@ -1,12 +1,11 @@
 <?php
-$title="Envoi du commentaire";
-include_once('./templates/startRequire.php');
-//Connexion à la base de donnéees
-include_once('./models/databaseConnect.php');
+$title="Envoi du commentaire"; //Titre de la page
+include_once('./templates/startRequire.php'); //Prerequis HTML
+include_once('./models/databaseConnect.php'); //Connexion à la base de donnéees
 $database = new dataBase;
 $database->connectTo();
-include_once('./models/commentsManager.php');
+include_once('./models/commentsManager.php'); 
 $comment = new Comment;
-$comment->send($idArticle);
-include_once('./templates/endRequire.php');
-header('Location:'.$_SESSION["link"].'article-'.$idArticle.'');
+$comment->send($idArticle); //Envoie du commentaire sur la BDD
+include_once('./templates/endRequire.php'); //Fermeture des balises HTML
+header('Location:'.$_SESSION["link"].'article-'.$idArticle.''); //Redirection vers la page de l'article dont l'id = $idArticle
