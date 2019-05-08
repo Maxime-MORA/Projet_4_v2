@@ -1,7 +1,7 @@
 <?php
 class Troncature extends Post
 {
-    function truncateHtml($id, $text, $length = 100, $exact = false, $considerHtml = true) {
+    function truncateHtml($id, $text, $length = 100, $exact = false, $considerHtml = true) { //Fonction de résumé d'articles
         $ending = '<a id="troncature" href="'.$_SESSION["link"].'article-'.$id.'"> [...] </a>';
     if ($considerHtml) {
         // if the plain text is shorter than the maximum length, return the whole text
