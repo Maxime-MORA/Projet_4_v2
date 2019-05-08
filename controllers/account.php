@@ -8,14 +8,13 @@ if($_SESSION['admin']==1){ //Si l'administrateur est connecté
         require_once './views/modify-pass.php';
     }
     if ($action ==2 ){ //Modification du MDP - Etape 2 - Envoie sur la BDD
-        $newpass = $_POST['modify-password'];
-        //Connexion à la base de donnéees
-        include_once('./models/databaseConnect.php');
+        $newpass = $_POST['modify-password']; //Recuperation du mot de passe modifié
+        include_once('./models/databaseConnect.php'); //Connexion à la base de donnéees
         $database = new dataBase;
         $database->connectTo();
         include_once('./models/passwordGeneration.php');
         $pass = new password;
-        $pass->updatePassword($newpass);
+        $pass->updatePassword($newpass); //Envoi du MDP sur la BDD
     } 
     if ($action ==3 ){ //Modification du MDP - Etape 3 - Message de succés
         include_once('./views/email-success-change.php');
@@ -24,14 +23,13 @@ if($_SESSION['admin']==1){ //Si l'administrateur est connecté
         require_once './views/modify-email.php';
     }
     if ($action ==5 ){ //Modification de l'email - Etape 2 - Envoie sur la BDD
-        $emailupdate = $_POST['modify-email'];
-        //Connexion à la base de donnéees
-        include_once('./models/databaseConnect.php');
+        $emailupdate = $_POST['modify-email']; //Recuperation de l'email de passe modifié
+        include_once('./models/databaseConnect.php'); //Connexion à la base de donnéees
         $database = new dataBase;
         $database->connectTo();
         include_once('./models/passwordGeneration.php');
         $pass = new password;
-        $pass->updateEmail($emailupdate);
+        $pass->updateEmail($emailupdate); //Envoi de l'email sur la BDD
     }
     if ($action ==6 ){ //Modification de l'email - Etape 3 - Message de succés
         include_once('./views/pass-success-change.php');
