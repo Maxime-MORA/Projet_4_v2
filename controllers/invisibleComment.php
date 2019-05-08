@@ -1,17 +1,16 @@
 <?php
-$title="Masquer le commentaire";
-include_once('./templates/startRequire.php');
-//Connexion à la base de donnéees
-include_once('./models/databaseConnect.php');
+$title="Masquer le commentaire"; //TItre de la page
+include_once('./templates/startRequire.php'); //Prérequis HTML
+include_once('./models/databaseConnect.php'); //Connexion à la base de donnéees
 $database = new dataBase;
 $database->connectTo();
 if($_SESSION['admin']==1){ //Si l'administrateur est connecté
      include_once('./models/commentsManager.php');
      $comment = new Comment;
-     $comment->invisibleComment($commentid);
-     header('Location:'.$_SESSION["link"].'article');
+     $comment->invisibleComment($commentid); //Masquer le commentaire dont l'id = $commentid
+     header('Location:'.$_SESSION["link"].'article'); //Redirection vers la page d'article
 }
 if($_SESSION['admin']==0){ //Si l'administrateur n'est pas connecté
-     header('Location:'.$_SESSION["link"].'connexion'); 
+     header('Location:'.$_SESSION["link"].'connexion'); //Redirection vers la page de connexion
 }
-include_once('./templates/endRequire.php');
+include_once('./templates/endRequire.php'); //Fermeture des balises HTML
