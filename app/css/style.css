@@ -1,4 +1,6 @@
-/* Navbar Styles */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400');
+
+/* Menu horizontal */
 .navbar-custom {
     background-color: black;
     font-weight: 700;
@@ -8,6 +10,7 @@
 }
 #troncature{
     text-decoration: none;
+    color:green;
 }
 #troncature:hover{
     text-decoration: none;
@@ -46,13 +49,41 @@
     /* Add a dark-grey background on hover */
 }
 
+
+/* Ecrans de 320 px de large */
+@media screen and (max-width: 340px) {
+    
+    .navbar-brand{
+        font-size:15px !important;
+    } 
+    nav>a{
+        font-size:15px !important;
+    } 
+    .btn-lg, .btn-group-lg > .btn.btn-lg, .btn-group-lg > .btn{
+        font-size : 0.80rem !important;
+    }
+    .btn{
+      font-size : 0.65rem !important;
+    }
+    h1{
+        font-size:1.85rem !important;
+    }
+    #toTop {
+        padding:7.5px !important;
+    }
+    #toTop {
+        padding:15px !important;
+    }
+}
+
+
 /*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
 
 :root {
     --blue: #007bff;
