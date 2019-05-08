@@ -51,8 +51,8 @@
 }
 
 
-/* Ecrans de 340 px de large max. - Iphone SE*/
-@media screen and (max-width: 340px) {
+/* Ecrans de 400 px de large max. - Iphone SE ++ */
+@media screen and (max-width: 400px) {
     
     .navbar-brand{
         font-size:15px !important;
