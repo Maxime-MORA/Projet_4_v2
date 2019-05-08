@@ -47,7 +47,7 @@ require_once('./models/troncatureTexte.php');
         <?= $data['author'] ?> le
         <?= $data['date'] ?>
     </p>
-    <a class="btn btn-primary  btn-block" style="margin:2.5px;" href="<?= $_SESSION["link"]."article-".$data['id'] ?>">Lire en entier</a>
+    <a class="btn btn-primary  btn-block" style="margin:2.5px;" href="<?=$_SESSION["link"]."article-".$data['id']?>">Lire en entier</a>
     <?php
     if ($nb==0){
         echo ('<a class="btn btn-dark btn-block" style="margin:2.5px;" href="'.$_SESSION["link"].'article-'.$data['id'].'#comments">Publier le premier commentaire</a>');
