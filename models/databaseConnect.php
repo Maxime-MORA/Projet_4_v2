@@ -1,6 +1,6 @@
 ﻿<?php
 class dataBase
-{
+{ //Connexion à la base de donnée
     public function connectTo(){
          //Informations de la BDD
          $servername='db341894-projet4.sql-pro.online.net';
