@@ -8,12 +8,14 @@
     letter-spacing: 0.1rem;
     font-size: 0.8rem;
 }
+/* [...] */
 #troncature{
     text-decoration: none;
 }
 #troncature:hover{
     text-decoration: none;
 }
+/* Bouton retour en haut */
 #toTop {
     display: none;
     /* Hidden by default */
@@ -49,7 +51,7 @@
 }
 
 
-/* Ecrans de 320 px de large */
+/* Ecrans de 340 px de large max. - Iphone SE*/
 @media screen and (max-width: 340px) {
     
     .navbar-brand{
