@@ -1,13 +1,13 @@
 <?php
-$title="Mise à jour des informations";
-include_once('./templates/startRequire.php');
-include_once('./templates/navBar.php');
+$title="Mise à jour des informations"; //Titre des pages
+include_once('./templates/startRequire.php'); //Requis HTML ( head + ouverture des balises )
+include_once('./templates/navBar.php'); //Menu de navigation horizontal
 
 if($_SESSION['admin']==1){ //Si l'administrateur est connecté
-    if ($action ==1 ){
+    if ($action ==1 ){ //Modification du MDP - Etape 1 - Formulaire
         require_once './views/modify-pass.php';
     }
-    if ($action ==2 ){
+    if ($action ==2 ){ //Modification du MDP - Etape 2 - Envoie sur la BDD
         $newpass = $_POST['modify-password'];
         //Connexion à la base de donnéees
         include_once('./models/databaseConnect.php');
@@ -17,13 +17,13 @@ if($_SESSION['admin']==1){ //Si l'administrateur est connecté
         $pass = new password;
         $pass->updatePassword($newpass);
     } 
-    if ($action ==3 ){
+    if ($action ==3 ){ //Modification du MDP - Etape 3 - Message de succés
         include_once('./views/email-success-change.php');
     }
-    if ($action ==4 ){
+    if ($action ==4 ){ //Modification de l'email - Etape 1 - Formulaire
         require_once './views/modify-email.php';
     }
-    if ($action ==5 ){
+    if ($action ==5 ){ //Modification de l'email - Etape 2 - Envoie sur la BDD
         $emailupdate = $_POST['modify-email'];
         //Connexion à la base de donnéees
         include_once('./models/databaseConnect.php');
@@ -33,12 +33,12 @@ if($_SESSION['admin']==1){ //Si l'administrateur est connecté
         $pass = new password;
         $pass->updateEmail($emailupdate);
     }
-    if ($action ==6 ){
+    if ($action ==6 ){ //Modification de l'email - Etape 3 - Message de succés
         include_once('./views/pass-success-change.php');
     }
 }   
-if($_SESSION['admin']==0){ //Si l'administrateur n'est pas connecté
-     header('Location:'.$_SESSION["link"].'connexion'); 
+elseif($_SESSION['admin']==0){ //Si l'administrateur n'est pas connecté
+     header('Location:'.$_SESSION["link"].'connexion');  //Redirection vers la page de connexion
 }
-include_once('./templates/endRequire.php');
+include_once('./templates/endRequire.php'); //Requis HTML ( fermeture des balises )
 
