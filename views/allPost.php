@@ -53,7 +53,7 @@ require_once('./models/troncatureTexte.php');
         echo ('<a class="btn btn-dark btn-block" style="margin:2.5px;" href="'.$_SESSION["link"].'article-'.$data['id'].'#comments">Publier le premier commentaire</a>');
     }
      elseif($nb>=1){
-         echo ('<a class="btn btn-dark btn-block" style="margin:2.5px;" href="'.$_SESSION["link"].'article-'.$data['id'].'#comments">Voir les commenta ( '.$nb.' ) ');
+         echo ('<a class="btn btn-dark btn-block" style="margin:2.5px;" href="'.$_SESSION["link"].'article-'.$data['id'].'#comments">Voir les commentaires ( '.$nb.' ) ');
          if ($signalsnb==0)
          {
              echo ('</a>');
