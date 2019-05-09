@@ -51,7 +51,8 @@
 }
 
 
-/* Ecrans de 400 px de large max. - Iphone SE ++ */
+/* Ecrans de 400 px de large max.jumbotroh - Iphone SE ++ */
+/* Ecrans de 400 px de large max.jumbotroh - Iphone SE ++ */
 @media screen and (max-width: 400px) {
     
     .navbar-brand{
@@ -5389,7 +5390,7 @@ input[type="button"].btn-block {
 
 .jumbotroh {
     padding: 2rem 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     background-color: #e9ecef;
     border-radius: 0.3rem;
     background-image: url(../img/hero.jpg);
