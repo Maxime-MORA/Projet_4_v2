@@ -10,7 +10,7 @@
     </div>
     <br />
     <p class="lead">
-        <a class="btn btn-primary btn-lg btn-block" href="#" role="button">Retour à la page d'accueil</a>
+        <a class="btn btn-primary btn-lg btn-block" href="<?=$_SESSION["link"]?>" role="button">Retour à la page d'accueil</a>
     </p>
 
 </div>
