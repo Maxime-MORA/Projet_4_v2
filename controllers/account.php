@@ -17,7 +17,7 @@ if($_SESSION['admin']==1){ //Si l'administrateur est connecté
         $pass->updatePassword($newpass); //Envoi du MDP sur la BDD
     } 
     if ($action ==3 ){ //Modification du MDP - Etape 3 - Message de succés
-        include_once('./views/email-success-change.php');
+        include_once('./views/pass-success-change.php');
     }
     if ($action ==4 ){ //Modification de l'email - Etape 1 - Formulaire
         require_once './views/modify-email.php';
@@ -32,7 +32,7 @@ if($_SESSION['admin']==1){ //Si l'administrateur est connecté
         $pass->updateEmail($emailupdate); //Envoi de l'email sur la BDD
     }
     if ($action ==6 ){ //Modification de l'email - Etape 3 - Message de succés
-        include_once('./views/pass-success-change.php');
+        include_once('./views/email-success-change.php');
     }
 }   
 elseif($_SESSION['admin']==0){ //Si l'administrateur n'est pas connecté
