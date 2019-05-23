@@ -39,7 +39,6 @@ elseif($url == 'verification-administrateur') {
     require 'controllers/adminVerify.php';  
 }
 //Page 'Mon compte' - Administrateur
-//Signalement d'un commentaire
 elseif(preg_match('#mon-compte-([0-9]+)#', $url, $params)) {
     $action = $params[1];
     require 'controllers/account.php';

@@ -1,7 +1,9 @@
 <?php 
 session_start();
 $_SESSION["link"] = 'http://projet-4.maximemora.com/';
-if (!isset($_SESSION["admin"])) $_SESSION["admin"] = 0;
+if (!isset($_SESSION["admin"])) {
+    $_SESSION["admin"] = 0
+};
 ?>
 <!DOCTYPE html>
 <html>
