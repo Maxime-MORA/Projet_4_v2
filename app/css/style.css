@@ -9,10 +9,10 @@
     font-size: 0.8rem;
 }
 /* [...] */
-#troncature{
+.troncature{
     text-decoration: none;
 }
-#troncature:hover{
+.troncature:hover{
     text-decoration: none;
 }
 /* Bouton retour en haut */

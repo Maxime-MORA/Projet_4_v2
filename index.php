@@ -6,17 +6,17 @@ if(isset($_GET['url'])) {
 //Page d'accueil
 if($url == '') {
     require 'controllers/homePage.php';
-} 
+}
 //Page 'Tous les articles'
 elseif($url == 'article') {
     require 'controllers/allPost.php';
-} 
+}
 //Page d'article unique
 elseif(preg_match('#article-([0-9]+)#', $url, $params)) {
     $idArticle = $params[1];
     require 'controllers/onePost.php';
 }
-//Suppréssion d'article
+//Suppression d'article
 elseif(preg_match('#deleteart-([0-9]+)#', $url, $params)) {
     $id = $params[1];
     require 'controllers/deleteArticle.php';
@@ -32,7 +32,6 @@ elseif($url == 'connexion') {
 //Page de déconnexion
 elseif($url == 'deconnexion') {
     require 'controllers/adminDisconnect.php';
-  
 }
 //Page de vérification - Administrateur
 elseif($url == 'verification-administrateur') {

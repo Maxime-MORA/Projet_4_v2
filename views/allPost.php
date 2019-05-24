@@ -79,7 +79,7 @@ require_once('./models/troncatureTexte.php');
      }
 ?>
 <button onclick="topFunction()" id="toTop" title="Go to top">Retour en haut</button>
-<script type="text/javascript">
+<script>
     function scrollFunction() {
         if (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) {
             document.getElementById("toTop").style.display = "flex";
